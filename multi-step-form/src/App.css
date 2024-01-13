@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.step-section, .form-section{
+    height: 34rem;
+}
+.step-section button{
+    border-color: 1px solid white;
+    height: 2.5rem;
+    width: 2.5rem;
+}
+/*.step-section button{
+    background-color:  hsl(206, 94%, 87%);
+    height: 2.5rem;
+    width: 2.5rem;
+    border-radius: 50%;
+}*/

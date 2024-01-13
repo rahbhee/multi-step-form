@@ -1,0 +1,49 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    box-sizing: border-box;
+    background-color: hsl(229, 24%, 87%);
+}
+.step-section, .form-section{
+    height: 34rem;
+}
+.step-section button{
+    border: 1px solid #fff;
+    height: 2rem;
+    width: 2rem;
+    border-radius: 50%;
+}
+h1, label{
+    color: hsl(213, 96%, 18%);
+}
+input{
+    outline: none;
+    border: .5px solid #D1D5DB;
+    padding-right: 16rem;
+    padding-bottom: .5rem;
+    padding-left: .5rem;
+    padding-top: .5rem;
+    font-size: .9rem;
+}
+label{
+    display: block;
+}
+.form-section button{
+    margin-left: 22rem;
+    margin-top: 2.5rem;
+    padding: .6rem 1rem;
+    color: #fff;
+    background-color:  hsl(213, 96%, 18%);
+}
+/*.step-section button{
+    background-color:  hsl(206, 94%, 87%);
+    height: 2.5rem;
+    width: 2.5rem;
+    border-radius: 50%;
+}*/
