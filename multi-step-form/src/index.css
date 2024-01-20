@@ -10,9 +10,7 @@ body{
     box-sizing: border-box;
     background-color: hsl(229, 24%, 87%);
 }
-.step-section, .form-section{
-    height: 34rem;
-}
+
 .step-section button{
     border: 1px solid #fff;
     height: 2rem;
@@ -40,6 +38,19 @@ label{
     padding: .6rem 1rem;
     color: #fff;
     background-color:  hsl(213, 96%, 18%);
+}
+@media screen and (max-width: 720px) {
+    .step-section{
+        background-image: 'url("/bg-sidebar-mobile.svg")';
+        width: 100%;
+        visibility: visible;
+    }
+   
+}
+@media screen and (min-width: 721px){
+    .step-section{
+        background-image: 'url("/bg-sidebar-desktop.svg")';
+    }
 }
 /*.step-section button{
     background-color:  hsl(206, 94%, 87%);
