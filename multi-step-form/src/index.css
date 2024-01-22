@@ -17,9 +17,7 @@ body{
     width: 2rem;
     border-radius: 50%;
 }
-h1, label{
-    color: hsl(213, 96%, 18%);
-}
+
 input{
     outline: none;
     border: .5px solid #D1D5DB;

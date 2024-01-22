@@ -13,6 +13,15 @@
     align-items: center;
     justify-content: center;
  }
+ h1, label, .info h3{
+  color: hsl(213, 96%, 18%);
+}
+.plan{
+  font-size: 1.7rem;
+}
+.plan-p{
+  font-size: 1.1rem;
+}
 /*.step-section button{
     background-color:  hsl(206, 94%, 87%);
     height: 2.5rem;
@@ -27,7 +36,6 @@
       background-size: cover;
       height: 35rem;
     }
-
     .button{
         display: flex;
         align-items: center;
@@ -44,6 +52,9 @@
     main{
         width: 100%;
     }
+    .p-div p{
+      margin-top: .3rem;
+    }
     .step-section {
       background-image: url("/bg-sidebar-mobile.svg");
       background-size: cover;
@@ -53,7 +64,7 @@
         background-color: #fff;
         width: 22rem;
         margin: auto;
-        top: -6rem;
+        top: -4rem;
         position: relative;
         height: 28rem;
     }
