@@ -3,11 +3,11 @@ import Info from './info';
 
 function StepSection (){
     return(
-        <section className="flex xl:flex-col step-section px-6 py-2 text-white">
+        <section className="flex lg:flex-col step-section px-6 py-2 text-white">
          <div className="flex items-center my-6">
           <button className="mr-3">1</button>
           <div className="step-info leading-2">
-              <p className="hidden lg:block xl:block lg:text-sm font-light">STEP 1</p>
+              <p className="hidden xl:block lg:block lg:text-sm font-light">STEP 1</p>
               <h6 className="hidden lg:block xl:block text-sm">YOUR INFO</h6>
           </div>
         </div>
