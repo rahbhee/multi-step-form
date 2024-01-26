@@ -7,6 +7,9 @@
     height: 2.5rem;
     width: 2.5rem;
 }
+#fin-p{
+  color: hsl(213, 96%, 18%);
+}
 .form-button{
     display: flex;
     align-items: center;
@@ -67,6 +70,18 @@ input:checked + .slider:before{
   font-weight: 500;
   font-size: .7rem;
 }
+.customizable[type=checkbox]{
+  accent-color: #6600ff;
+}
+.info{
+  background-color: #F3F4F6;
+}
+.line{
+  height: .01rem;
+}
+#next{
+  background-color:  #6600ff;
+}
 /*.step-section button{
     background-color:  hsl(206, 94%, 87%);
     height: 2.5rem;
@@ -79,7 +94,7 @@ input:checked + .slider:before{
       background-image: url("/bg-sidebar-desktop.svg");
       background-repeat: no-repeat;
       background-size: cover;
-      height: 35rem;
+      height: auto;
     }
     .button{
         display: flex;
@@ -104,7 +119,6 @@ input:checked + .slider:before{
         background: white;
         align-items: center;
         justify-content: center;
-        margin-top: 2rem;
     }
    .desktop-btn button{
       padding: .6rem 1rem;
@@ -116,15 +130,18 @@ input:checked + .slider:before{
    .desktop-btn p{
       color: hsl(231, 11%, 63%);
       font-weight: 500;
-      right: -3rem;
+      margin-top: 2rem;
    }
    .p-div{
     width: 10rem;
     font-size: .7rem;
    }
    .add-p{
-    color: #944dff;
+    color: #6600ff;
     margin-left: 15rem;
+   }
+   .p-div p{
+    font-size: .85rem;
    }
   }
 @media only screen
@@ -146,7 +163,7 @@ input:checked + .slider:before{
     .step-section {
       background-image: url("/bg-sidebar-mobile.svg");
       background-size: cover;
-      max-height: 15rem;
+      height: auto;
     }
     .form-section{
         background-color: #fff;
@@ -207,10 +224,8 @@ input:checked + .slider:before{
       width: 8.5rem;
       font-size: .65rem;
      }
-     .p-div p{
-  
-     }
+     
      .add-p{
-      color: #944dff;
+      color: #6600ff;
      }
 }

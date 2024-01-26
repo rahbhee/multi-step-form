@@ -3,6 +3,10 @@ import PlansTwo from './planstwo';
 import Button from './button';
 import PlanBtn from './planbtn';
 import AddOns from './addons';
+import AddOnsTwo from './addonstwo'
+import FinishUp from './finishup';
+import FinishUpTwo from './finishuptwo';
+import Thank from './thank'
 /*import Info from './info';*/
 
 function StepContent(){
@@ -12,12 +16,11 @@ function StepContent(){
                {/*<Info/>*/}
               {/*} <Plans/>
     <PlansTwo/>
-    <AddOns/>*/}
+    <AddOns/>
+    <AddOnsTwo/>
     <FinishUp/>
-                 <div className="desktop-btn hidden lg:flex md:flex md:hidden lg:justify-between md:justify-between">
-                 <p>Go back</p>
-                 <button className="rounded-lg">Next Step</button>
-                 </div>
+    <FinishUpTwo/>*/}
+    <Thank/>
              </section>
              <Button/>
         </>
