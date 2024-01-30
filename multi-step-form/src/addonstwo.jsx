@@ -31,10 +31,7 @@ function AddOnsTwo(){
                 <p className="add-p text-xs">+$1/yr</p>
             </div>
         </div>
-        <div className="desktop-btn hidden lg:flex md:flex md:hidden lg:justify-between md:justify-between">
-                 <p>Go back</p>
-                 <button className="rounded-lg">Next Step</button>
-        </div>
+      
         </>
     )
 }

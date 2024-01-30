@@ -1,45 +1,50 @@
-import React from 'react';
+import React, {useState} from 'react';
 import Info from './info';
 import Plans from './plan'
 import PlansTwo from './planstwo';
-import Button from './button';
-import PlanBtn from './planbtn';
 import AddOns from './addons';
 import AddOnsTwo from './addonstwo'
 import FinishUp from './finishup';
 import FinishUpTwo from './finishuptwo';
 import Thank from './thank';
-/*import Info from './info';*/
+
 
 function StepContent(){
-   
-
-    const pages = [
-        "info",
-        "planstwo",
-        "addons",
-        "finishup",
-        "finishuptwo",
-        "thank",
-        "addonstwo",
-        "planstwo"
-    ]
+   const [page, setPage] = useState(0)
+    const pageDisplay = () =>{
+      if(page === 0){
+        return <Info onValidation={handleValidationErrors}/>
+      }else if(page === 1){
+        return <Plans/>
+      }else if(page === 2){
+        return <PlansTwo/>
+      }else if(page === 3){
+        return <AddOns/>
+      }else if(page === 4){
+        return <AddOnsTwo/>
+      }else if(page === 5){
+        return <FinishUp/>
+      }else if(page === 6){
+        return <FinishUpTwo/>
+      }else{
+        return <Thank/>
+      }
+    }
 
     return (
         <>
            <section className="form-section h-auto lg:col-span-2 lg:col-span-2 lg:ml-16 lg:mr-16 py-7 px-5 rounded-lg">
-             <Info/>
-             <PlansTwo/>
-             <AddOns/>
-             <FinishUp/>
-             <FinishUpTwo/>
-             <Thank/>
-             <AddOnsTwo/>
-             <PlansTwo/>
+            {pageDisplay()}
+            <div className="desktop-btn flex hidden lg:flex md:flex justify-between">
+            <p>Go back</p>
+            <button className="rounded-lg" onClick={() =>{setPage((currPage) => currPage + 1)}}>Next Step</button>
+            </div>
            </section>
-             <Button/>
-        </>
-      
+           <div className="mobile flex lg:hidden md;hidden justify-between">
+            <p>Go back</p>
+            <button className="rounded-lg" onClick={() =>{setPage((currPage) => currPage + 1)}}>Next Step</button>
+        </div>
+        </>    
 )
 }
           

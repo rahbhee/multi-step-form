@@ -82,6 +82,12 @@ input:checked + .slider:before{
 #next{
   background-color:  #6600ff;
 }
+.span{
+  display: block;
+  position: relative;
+  top: -2rem;
+  color: red;
+}
 /*.step-section button{
     background-color:  hsl(206, 94%, 87%);
     height: 2.5rem;
@@ -94,7 +100,7 @@ input:checked + .slider:before{
       background-image: url("/bg-sidebar-desktop.svg");
       background-repeat: no-repeat;
       background-size: cover;
-      height: auto;
+      height: 36.5rem;
     }
     .plan{
       font-size: 1.7rem;
@@ -139,7 +145,6 @@ input:checked + .slider:before{
    .desktop-btn p{
       color: hsl(231, 11%, 63%);
       font-weight: 500;
-      margin-top: 2rem;
    }
    .p-div{
     width: 10rem;
@@ -151,6 +156,9 @@ input:checked + .slider:before{
    }
    .p-div p{
     font-size: .85rem;
+   }
+   .form-section{
+    width: 35rem;
    }
   }
 @media only screen
@@ -180,7 +188,7 @@ input:checked + .slider:before{
         margin: auto;
         top: -4rem;
         position: relative;
-        height: 35rem;
+        height: auto;
     }
     .step-section button{
         margin-bottom: 5rem;
@@ -207,7 +215,7 @@ input:checked + .slider:before{
         align-items: center;
         justify-content: space-around;
         height: 7rem; 
-       margin: auto;
+        margin: auto;
      }
      .mobile button{
         padding: .6rem 1rem;
@@ -233,7 +241,7 @@ input:checked + .slider:before{
       width: 8.5rem;
       font-size: .65rem;
      }
-     
+    
      .add-p{
       color: #6600ff;
      }

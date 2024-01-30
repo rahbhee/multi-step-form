@@ -30,13 +30,7 @@ input{
 label{
     display: block;
 }
-.form-section button{
-    margin-left: 22rem;
-    margin-top: 2.5rem;
-    padding: .6rem 1rem;
-    color: #fff;
-    background-color:  hsl(213, 96%, 18%);
-}
+
 @media screen and (max-width: 720px) {
     .step-section{
         background-image: 'url("/bg-sidebar-mobile.svg")';

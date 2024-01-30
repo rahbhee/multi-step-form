@@ -1,8 +1,6 @@
 import React from 'react';
-import Info from './info';
 
 function StepSection (){
- 
 
     return(
         <section className="flex lg:flex-col step-section px-6 py-2 text-white">
