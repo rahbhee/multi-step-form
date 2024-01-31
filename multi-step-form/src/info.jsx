@@ -1,42 +1,39 @@
-import React, { useState } from 'react';
+import React from 'react';
 
-
-function Info(){
-    const [formData, setFormData] = useState({
-        username: "",
-        email: "",
-        phone: ""
-    })
-    const [errors, setErrors] = useState({})
-
-    const handleChange = (e) => {
+function Info({ formData, errors, onFormChange }){
+     const handleChange = (e) => {
         const {name, value} = e.target;
-        setFormData({
-            ...formData, [name] : value
-        })
+        onFormChange(name, value);
     }
     const handleSubmit = (e) => {
-        e.preventDefault()
-        const validationErrors = {}
-        if(!formData.username.trim()){
-            validationErrors.username="username is required"
+        e.preventDefault();
+        const validationErrors = validateForm();
+        if (Object.keys(validationErrors).length === 0) {
+          alert('Form Submitted successfully');
         }
-        if(!formData.email.trim()){
-            validationErrors.email ="email is required"
-        }else if(!/\S+@\S+\.\S+/.test(formData.email)){
-            validationErrors.email="email is not valid"
+    };
+    const validateForm = () => {
+        const validationErrors = {};
+    
+        if (!formData.username.trim()) {
+          validationErrors.username = 'Username is required';
         }
-        if(!formData.phone.trim()) {
-            validationErrors.phone = "Phone number is required";
+    
+        if (!formData.email.trim()) {
+          validationErrors.email = 'Email is required';
+        } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
+          validationErrors.email = 'Email is not valid';
+        }
+    
+        if (!formData.phone.trim()) {
+          validationErrors.phone = 'Phone number is required';
         } else if (!/^\+?[1-9]\d{1,14}$/.test(formData.phone)) {
-            validationErrors.phone = "Phone number is not valid";
+          validationErrors.phone = 'Phone number is not valid';
         }
-        setErrors(validationErrors)
 
-        if(Object.keys(validationErrors).length === 0) {
-            alert("Form Submitted successfully")
-        }
-    }
+        return validationErrors;
+      };
+    
     return(
         <form onSubmit={handleSubmit}>
         <h1 className="text-3xl font-bold mt-4 mb-6 pr-24">Personal info</h1>
