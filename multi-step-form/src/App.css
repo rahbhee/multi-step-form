@@ -134,15 +134,17 @@ input:checked + .slider:before{
         background: white;
         align-items: center;
         justify-content: center;
+        position: relative;
+        top: 1rem;
     }
-   .desktop-btn button{
+   .desktop-btn .next{
       padding: .6rem 1rem;
       color: #fff;
       background-color:  hsl(213, 96%, 18%);
       width: 6.5rem;
       margin-left: 21rem;
    }
-   .desktop-btn p{
+   .desktop-btn .back{
       color: hsl(231, 11%, 63%);
       font-weight: 500;
    }
@@ -217,13 +219,13 @@ input:checked + .slider:before{
         height: 7rem; 
         margin: auto;
      }
-     .mobile button{
+     .mobile .next{
         padding: .6rem 1rem;
         color: #fff;
         background-color: hsl(213, 96%, 18%);
         margin-right: 4rem;
      }
-     .mobile p{
+     .mobile .back{
         color: hsl(231, 11%, 63%);
         font-weight: 500;
         margin-left: 4rem;

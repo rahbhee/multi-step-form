@@ -30,7 +30,7 @@ function Info({ formData, errors, onFormChange }){
         } else if (!/^\+?[1-9]\d{1,14}$/.test(formData.phone)) {
           validationErrors.phone = 'Phone number is not valid';
         }
-
+    
         return validationErrors;
       };
     
