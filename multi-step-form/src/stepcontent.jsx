@@ -7,17 +7,33 @@ import FinishUp from './finishup';
 import FinishUpTwo from './finishuptwo';
 import Thank from './thank';
 
+interface IFormInputValues {
+	username: string;
+	email: string;
+	phone: string;
+};
 
+ function getFormData(){
 
-function StepContent(){
-   const [page, setPage] = useState(0)
-   const [isChecked, setIsChecked] = useState(false);
-   const [formData, setFormData] = useState({
+    const storedData = localStorage.getItem("form")
+    if(!storedData) return{
     username: '',
     email: '',
     phone: ''
-  });
-  
+    }
+    return JSON.parse(storedData)
+  }
+
+function StepContent(){
+
+   const [page, setPage] = useState(0)
+   const [isChecked, setIsChecked] = useState(false);
+   const [formData, setFormData] = React.useState<IFormInputValues>(getFormData);
+
+  React.useEffect(() =>{
+    localStorage.setItem('form', JSON.stringify(formData))
+  }, [formData])
+
   const [errors, setErrors] = useState({});
 
 
