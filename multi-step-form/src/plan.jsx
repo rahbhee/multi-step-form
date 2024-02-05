@@ -5,7 +5,7 @@ import pro from '/icon-pro.svg'
 
 
 function Plans({isChecked, handleToggle}) {
-
+ 
     return (
         <>
         <h1 className="plan font-bold mt-2 mb-2 pr-24 text-3x1">Select your plan</h1>

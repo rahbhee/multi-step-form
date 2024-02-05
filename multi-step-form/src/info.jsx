@@ -40,18 +40,18 @@ function Info({ formData, errors, onFormChange }){
         <p className="text-gray-500">Please provide your name, email address, and phone number.</p>
         <div className="">
         <label className="mt-6 text-sm font-semibold">Name</label>
-        <input className="rounded-lg mb-8 mt-2" name="username" placeholder="e.g Stephen King" onChange={handleChange}
+        <input className="rounded-lg mb-8 mt-2" value={formData.username} name="username" placeholder="e.g Stephen King" onChange={handleChange}
         />
          {errors.username && <p  className='span'>{errors.username}</p>}
         </div>
         <div>
         <label className="text-sm font-semibold">Email Address</label>
-        <input className="rounded-lg mb-8 mt-2" name="email" placeholder="e.g stephenking@lorem.com"  onChange={handleChange}/>
+        <input className="rounded-lg mb-8 mt-2" value={formData.email} name="email" placeholder="e.g stephenking@lorem.com"  onChange={handleChange}/>
         {errors.email && <p className='span'>{errors.email}</p>}
         </div>
         <div>
         <label className="text-sm font-semibold">Phone number</label>
-        <input className="rounded-lg mb-8 mt-2" name="phone" placeholder="e.g +1 234567890"  onChange={handleChange}/>
+        <input className="rounded-lg mb-8 mt-2" value={formData.phone} name="phone" placeholder="e.g +1 234567890"  onChange={handleChange}/>
         {errors.phone && <p  className='span'>{errors.phone}</p>}
         </div>
         </form>
