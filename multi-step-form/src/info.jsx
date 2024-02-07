@@ -49,7 +49,7 @@ function Info({ formData, errors, onFormChange }){
         <input className="rounded-lg mb-8 mt-2" value={formData.email} name="email" placeholder="e.g stephenking@lorem.com"  onChange={handleChange}/>
         {errors.email && <p className='span'>{errors.email}</p>}
         </div>
-        <div>
+        <div className='mb-8'>
         <label className="text-sm font-semibold">Phone number</label>
         <input className="rounded-lg mb-8 mt-2" value={formData.phone} name="phone" placeholder="e.g +1 234567890"  onChange={handleChange}/>
         {errors.phone && <p  className='span'>{errors.phone}</p>}

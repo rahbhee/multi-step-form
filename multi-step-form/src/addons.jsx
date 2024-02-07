@@ -5,7 +5,7 @@ function AddOns({isChecked, handleCheckBox, boxCheck}){
         <>
         <h1 className="add font-bold mt-2 mb-2 pr-24 text-3x1">Pick add-ons</h1>
         <p className="plan-p text-gray-500 lg:text-base md:text-base ">Add-ons help enhance your gaming experience</p>
-        <div className='info lg:flex-col items-center md:flex-col justify-between mt-6 lg:mt-12 md:mt-12'>
+        <div className='info mb:16 lg:flex-col items-center md:flex-col justify-between mt-6 lg:mt-12 md:mt-12'>
             <div className="add-div flex mb-4 pt-4 pb-4 lg:h-16 md:h-16 border rounded-lg border-solid items-center border-gray-300">
                 <input type="checkbox" className="w-4 mr-4 ml-4"  checked={boxCheck.onlineService} onChange={() => handleCheckBox('onlineService')}/>
                 <div className="p-div">

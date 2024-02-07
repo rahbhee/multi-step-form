@@ -94,14 +94,7 @@ input:checked + .slider:before{
 .line{
   height: .01rem;
 }
-.confirm{
-  background-color:  #6600ff;
-  padding: .6rem 1rem;
-  color: #fff;
-  width: 6.5rem;
-  margin-left: 21rem;
-  border-radius: .5rem;
-}
+
 .span{
   display: block;
   position: relative;
@@ -150,6 +143,15 @@ input:checked + .slider:before{
       padding-bottom: 1rem;
       padding-top: 1rem;
      }
+     .confirm{
+      background-color:  #6600ff;
+      padding: .6rem 1rem;
+      color: #fff;
+      width: 6.5rem;
+      margin-left: 21rem;
+      margin-top: 3rem;
+      border-radius: .5rem;
+    }
      .desktop-btn{
         display: flex;
         background: white;
@@ -186,6 +188,16 @@ input:checked + .slider:before{
   }
 @media only screen
   and (max-width: 640px) {
+    body{
+     
+    }
+    .adjust{
+      margin-left: 13.5rem;
+      padding: .6rem 1rem;
+      color: #fff;
+      background-color: hsl(213, 96%, 18%);
+      border-radius: .5rem;
+    }
    .add-p{
     margin-left: 5rem;
    }
@@ -205,13 +217,21 @@ input:checked + .slider:before{
       background-size: cover;
       height: auto;
     }
+    .confirm{
+      background-color:  #6600ff;
+      padding: .6rem 1rem;
+      color: #fff;
+      width: 6.5rem;
+      margin-right: 4rem;
+      border-radius: .5rem;
+    }
     .form-section{
         background-color: #fff;
         width: 22rem;
         margin: auto;
         top: -4rem;
         position: relative;
-        height: auto;
+        min-height: 30rem;
     }
     .step-section button{
         margin-bottom: 5rem;
@@ -237,7 +257,7 @@ input:checked + .slider:before{
         background: white;
         align-items: center;
         justify-content: space-around;
-        height: 7rem; 
+        height: 8rem; 
         margin: auto;
      }
      .mobile .next{

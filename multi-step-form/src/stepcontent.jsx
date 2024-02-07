@@ -125,15 +125,15 @@ useEffect(() =>{
         <>
            <section className="form-section h-auto lg:col-span-2 lg:col-span-2 lg:ml-16 lg:mr-16 py-7 px-5 rounded-lg">
             {pageDisplay()}
-            <div className="desktop-btn flex hidden lg:flex md:flex justify-between">
+            {page <= 3 &&  <div className="desktop-btn flex hidden lg:flex md:flex justify-between">
             {page > 0 && page <= 3 && (<button  className="back"  onClick={handlePrevPage}> Go Back</button>)}
             {page <= 2 ? <button className="rounded-lg next" onClick={handleNextPage}>Next Step</button> : <button className="rounded-lg" onClick={handleNextPage}>{page === 3 && <span className="confirm">Confirm</span>}</button>}
-           </div>
+           </div>}
            </section>
-           <div className="mobile flex lg:hidden md;hidden justify-between">
-           {page <= 3 && <button  className="back"  onClick={handlePrevPage}> Go Back</button>}
-           {page <= 2 ? <button className="rounded-lg next" onClick={handleNextPage}>Next Step</button> : <button className="rounded-lg" onClick={handleNextPage}>{page === 3 && <span className="confirm">Confirm</span>}</button>}
-           </div>
+          {page<=3 &&  <div className="mobile flex lg:hidden md;hidden justify-between">
+           {page > 0 && page <= 3 && (<button  className="back"  onClick={handlePrevPage}> Go Back</button>)}
+           {page <= 2 ? <button className={page == 0 ? "adjust" : "next rounded-lg"}onClick={handleNextPage}>Next Step</button> : <button className="rounded-lg" onClick={handleNextPage}>{page === 3 && <span className="confirm">Confirm</span>}</button>}
+           </div>}
         </>    
 )
 }
