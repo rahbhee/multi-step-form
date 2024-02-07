@@ -36,7 +36,7 @@ function Plans({isChecked, handleToggle}) {
                 </div>
             </div>
         </div>
-        <div className='flex mt-8 lg:m-0 plan-btn'>
+        <div className='flex mt- plan-btn'>
             <p className='mr-6'>Monthly</p>
             <div className='inline-block'>
             <label className='switch'>

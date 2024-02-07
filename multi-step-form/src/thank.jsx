@@ -12,7 +12,7 @@ function Thank(){
              <h1 className='text-3xl mb-8 font-bold'>Thank you!</h1>
             <p className='text-gray-500'>Thanks for confirming your subscription! We hope you have fun using our platform. If you ever need support, please free to email us at support@loremgaming.com</p>
             </div>
-             </div>
+            </div>
         </div>
     )
 }

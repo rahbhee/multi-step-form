@@ -3,7 +3,6 @@ import Info from './info';
 import Plans from './plan'
 import AddOns from './addons';
 import FinishUp from './finishup';
-import FinishUpTwo from './finishuptwo';
 import Thank from './thank';
 
 
@@ -18,10 +17,14 @@ import Thank from './thank';
     return JSON.parse(storedData)
   }
 
-function StepContent(){
+function StepContent({setPage, page}){
 
-   const [page, setPage] = useState(0)
    const [isChecked, setIsChecked] = useState(false);
+   const [boxCheck, setBoxCheck] = useState({
+    onlineService: false,
+    largerStorage: false,
+    customizableProfile: false
+   })
    const [formData, setFormData] = useState(getFormData);
    const [errors, setErrors] = useState({});
 
@@ -35,7 +38,6 @@ function StepContent(){
   const handleNextPage = () => {
     const validationErrors = validateForm();
     if (Object.keys(validationErrors).length === 0) {
-     
       setPage((currPage) => currPage + 1);
     } else {
       setErrors(validationErrors);
@@ -88,15 +90,32 @@ useEffect(() => {
   }
 }, []);
 
+const handleCheckBox = (checkboxName) =>{
+  setBoxCheck((prevBoxCheck) =>{
+    const newBoxCheck = { ...prevBoxCheck, [checkboxName]: !prevBoxCheck[checkboxName] };
+    console.log('New boxCheck state:', newBoxCheck);
+    localStorage.setItem('boxCheck', JSON.stringify(newBoxCheck));
+    return newBoxCheck;
+  })
+}
+
+useEffect(() =>{
+  const storedBoxCheck = localStorage.getItem('boxCheck');
+  console.log('Stored boxCheck from local storage:', storedBoxCheck);
+  if(storedBoxCheck !== null){
+    setBoxCheck(JSON.parse(storedBoxCheck))
+  }
+}, [])
+
     const pageDisplay = () =>{
       if(page === 0){
         return <Info formData={formData} errors={errors} onFormChange={handleFormChange} />
       }else if(page === 1){
         return <Plans isChecked={isChecked} handleToggle={handleToggle}/>
       }else if(page === 2){
-        return <AddOns isChecked={isChecked}/>
+        return <AddOns isChecked={isChecked} boxCheck={boxCheck} handleCheckBox={(checkboxName) => handleCheckBox(checkboxName)}/>
       }else if(page === 3){
-        return <FinishUp isChecked={isChecked}/>
+        return <FinishUp isChecked={isChecked} setPage={setPage}/>
       }else{
         return <Thank/>
       }
@@ -107,13 +126,13 @@ useEffect(() => {
            <section className="form-section h-auto lg:col-span-2 lg:col-span-2 lg:ml-16 lg:mr-16 py-7 px-5 rounded-lg">
             {pageDisplay()}
             <div className="desktop-btn flex hidden lg:flex md:flex justify-between">
-            <button className="back" onClick={handlePrevPage}>Go back</button>
-            <button className="rounded-lg next" onClick={handleNextPage}>Next Step</button>
+            {page > 0 && page <= 3 && (<button  className="back"  onClick={handlePrevPage}> Go Back</button>)}
+            {page <= 2 ? <button className="rounded-lg next" onClick={handleNextPage}>Next Step</button> : <button className="rounded-lg" onClick={handleNextPage}>{page === 3 && <span className="confirm">Confirm</span>}</button>}
            </div>
            </section>
            <div className="mobile flex lg:hidden md;hidden justify-between">
-           <button  className="back"  onClick={handlePrevPage}>Go back</button>
-            <button className="rounded-lg next" onClick={handleNextPage}>Next Step</button>
+           {page <= 3 && <button  className="back"  onClick={handlePrevPage}> Go Back</button>}
+           {page <= 2 ? <button className="rounded-lg next" onClick={handleNextPage}>Next Step</button> : <button className="rounded-lg" onClick={handleNextPage}>{page === 3 && <span className="confirm">Confirm</span>}</button>}
            </div>
         </>    
 )
